@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlgarveHotels.HotelsPage"
+             Title="{Binding Name}">
+
+
+   <CollectionView x:Name="HotelsCollectionView"
+                SelectionMode="Single"
+                SelectionChanged="OnHotelSelected">
+
+      <CollectionView.ItemTemplate>
+         <DataTemplate>
+            <Border Stroke="Gray" StrokeThickness="1" Margin="10" Padding="10" BackgroundColor="Gray">
+               <VerticalStackLayout>
+                  <Image Source="{Binding ImageUrl}" HeightRequest="150" Aspect="AspectFill" />
+                  <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="20" />
+                  <Label Text="{Binding Description}" FontSize="14" TextColor="Gray" />
+                  <Label Text="{Binding AvePrice, StringFormat='Preco medio: {0:F2}'}" FontSize="14" />
+                  <Label Text="{Binding Rating, StringFormat='Avaliacao: {0}/10'}" FontSize="14" />
+               </VerticalStackLayout>
+            </Border>
+         </DataTemplate>
+      </CollectionView.ItemTemplate>
+   </CollectionView>
+</ContentPage>
