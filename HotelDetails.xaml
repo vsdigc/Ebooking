@@ -1,0 +1,24 @@
+
+  <ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AlgarveHotels.HotelDetailsPage"
+             Title="{Binding Name}">
+
+
+   <ScrollView>
+      <StackLayout Padding="20" Spacing="15">
+         <Image Source="{Binding ImageUrl}" HeightRequest="200" Aspect="AspectFill"/>
+         <Label Text="{Binding Name}" FontAttributes="Bold" FontSize="24"/>
+         <Label Text="{Binding Description}" FontSize="16"/>
+         <Label Text="Preco medio:" FontAttributes="Bold"/>
+         <Label Text="{Binding AvePrice, StringFormat='€{0:F2}'}"/>
+         <Label Text="Avaliacao:" FontAttributes="Bold"/>
+         <Label Text="{Binding Rating, StringFormat='{0}/10'}"/>
+
+         <Button Text="Ver no Booking" 
+                    Clicked="OnBookingClicked"
+                    BackgroundColor="RoyalBlue"
+                    TextColor="White"/>
+      </StackLayout>
+   </ScrollView>
+</ContentPage>
